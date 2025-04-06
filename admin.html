@@ -1,0 +1,20 @@
+<button id="view-all-stories">View All Stories</button>
+<div id="all-stories"></div>
+
+<script>
+    document.getElementById('view-all-stories').addEventListener('click', async () => {
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://localhost:5000/admin/stories', {
+            headers: { 'x-auth-token': token }
+        });
+
+        if (response.ok) {
+            const stories = await response.json();
+            document.getElementById('all-stories').innerHTML = stories.map(story =>
+                `<p><strong>${story.title}</strong>: ${story.content}</p>`
+            ).join('');
+        } else {
+            alert('Unauthorized access');
+        }
+    });
+</script>
