@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const response = await fetch('http://localhost:5000/login', {
+    const response = await fetch('https://shadow-stories-backend.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
