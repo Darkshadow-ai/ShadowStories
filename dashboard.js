@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    const response = await fetch('http://localhost:5000/my-stories', {
+    const response = await fetch('https://shadow-stories-backend.onrender.com', {
         method: 'GET',
         headers: {
             'x-auth-token': token,
